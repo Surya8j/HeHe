@@ -55,13 +55,17 @@ const About = () => {
               ))}
             </div>
             
-            <button className={`px-6 py-3 mt-4 rounded-full font-medium transform transition hover:scale-105 ${
-              theme === 'dark' 
-                ? 'bg-blue-500 hover:bg-blue-600 text-white' 
-                : 'bg-blue-600 hover:bg-blue-700 text-white'
-            }`}>
-              Download CV
-            </button>
+<a
+  href="/CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
+  download
+  className={`px-6 py-3 mt-4 rounded-full font-medium transform transition hover:scale-105 ${
+    theme === 'dark' 
+      ? 'bg-blue-500 hover:bg-blue-600 text-white' 
+      : 'bg-blue-600 hover:bg-blue-700 text-white'
+  }`}
+>
+  Download CV
+</a>
           </div>
           
           <div className="order-1 lg:order-2">
