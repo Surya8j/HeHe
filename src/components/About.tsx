@@ -56,7 +56,7 @@ const About = () => {
             </div>
             
 <a
-  href="/home/project/CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
+  href="/project/CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
   download
   className={`px-6 py-3 mt-4 rounded-full font-medium transform transition hover:scale-105 ${
     theme === 'dark' 
