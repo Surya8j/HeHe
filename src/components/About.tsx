@@ -56,7 +56,7 @@ const About = () => {
             </div>
             
 <a
-  href="/home/project/CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
+  href="CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
   download
   className={`px-6 py-3 mt-4 rounded-full font-medium transform transition hover:scale-105 ${
     theme === 'dark' 
@@ -74,7 +74,7 @@ const About = () => {
                 theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'
               }`} style={{ aspectRatio: '1/1' }}>
                 <img 
-                  src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  src="link.jpeg" //my photo
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />

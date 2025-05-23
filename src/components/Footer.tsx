@@ -11,15 +11,16 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
             <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>
-              © {currentYear} John Doe. All Rights Reserved
+              © {currentYear} Surya J. All Rights Reserved
             </p>
           </div>
           
           <div className="flex space-x-4 mt-4 md:mt-0">
-            {['Twitter', 'LinkedIn', 'GitHub', 'Dribbble'].map((platform, index) => (
+            {['LinkedIn'].map((platform, index) => (
               <a 
                 key={index} 
-                href="#" 
+                href="https://www.linkedin.com/in/surya-j-35984424a/"
+                target="_blank" 
                 className="hover:text-blue-500 transition-colors"
               >
                 {platform}
