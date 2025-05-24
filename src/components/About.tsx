@@ -1,6 +1,7 @@
 import React from 'react';
 import { User, Mail, MapPin, Calendar, Shield, Award } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { useEffect, useRef } from 'react';
 
 const About = () => {
   const { theme } = useTheme();
@@ -14,8 +15,10 @@ const About = () => {
     { icon: <Award size={20} />, label: 'Certifications', value: 'CEH, CC, ISO/IEC 27001:2022 LA' },
   ];
 
+  const imageContainerRef = useRef(null);
+
   return (
-    <section className={`py-20 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+    <section className={`py-20`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
@@ -25,7 +28,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h3 className="text-2xl font-semibold mb-6">
-              Information Security Professional & <span className="text-blue-500">Risk Management Expert</span>
+              Information Security Professional & <span className="text-green-400">Risk Management Expert</span>
             </h3>
             
             <p className="mb-6 leading-relaxed">
@@ -45,10 +48,10 @@ const About = () => {
               {personalInfo.map((item, index) => (
                 <div key={index} className="flex items-center">
                   <div className={`p-2 rounded-full mr-3 ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'}`}>
-                    {item.icon}
+ {item.icon}
                   </div>
                   <div>
-                    <span className={`block text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>{item.label}:</span>
+ <span className={`block text-sm ${theme === 'dark' ? '' : ''}`}>{item.label}:</span>
                     <span className="font-medium">{item.value}</span>
                   </div>
                 </div>
@@ -60,8 +63,8 @@ const About = () => {
   download
   className={`px-6 py-3 mt-4 rounded-full font-medium transform transition hover:scale-105 ${
     theme === 'dark' 
-      ? 'bg-blue-500 hover:bg-blue-600 text-white' 
-      : 'bg-blue-600 hover:bg-blue-700 text-white'
+      ? ' text-white' 
+      : ' text-white'
   }`}
 >
   Download CV
@@ -69,23 +72,22 @@ const About = () => {
           </div>
           
           <div className="order-1 lg:order-2">
-            <div className="relative">
-              <div className={`rounded-lg overflow-hidden shadow-xl transform transition-all hover:scale-105 ${
-                theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'
+            <div className="relative" ref={imageContainerRef}>
+              <div className={`rounded-lg overflow-hidden shadow-xl transform transition-all hover:scale-105 ${''
               }`} style={{ aspectRatio: '1/1' }}>
                 <img 
                   src="link.jpeg" //my photo
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />
-              </div>
+ </div>
               <div className={`absolute -bottom-5 -right-5 w-32 h-32 rounded-full border-4 ${
                 theme === 'dark' ? 'border-gray-800 bg-gray-700' : 'border-white bg-gray-100'
               }`}>
                 <div className="relative w-full h-full flex items-center justify-center">
                   <span className="text-4xl font-bold text-blue-500">3+</span>
                   <span className={`absolute bottom-3 text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                    YEARS
+ YEARS
                   </span>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 const Skills = () => {
   const { theme } = useTheme();
   return (
-    <section className={`py-20 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Frameworks/Audits</h2>
@@ -21,9 +21,7 @@ const Skills = () => {
           ].map((cert, index) => (
             <div 
               key={index} 
-              className={`p-4 rounded-lg transform transition hover:scale-105 ${
-                theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50 shadow-sm'
-              }`}
+              className="p-4 rounded-lg transform transition hover:scale-105 shadow-sm"
             >
               <span className="font-medium">{cert}</span>
             </div>

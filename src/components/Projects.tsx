@@ -76,7 +76,7 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
   
   return (
-    <section className={`py-20 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+    <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">My Projects</h2>
@@ -105,9 +105,7 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div 
               key={project.id} 
-              className={`group rounded-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 ${
-                theme === 'dark' ? 'bg-gray-700 shadow-lg' : 'bg-white shadow-md'
-              }`}
+              className="group rounded-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 shadow-lg"
             >
               <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
                 <img 

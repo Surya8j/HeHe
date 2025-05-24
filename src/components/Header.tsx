@@ -34,13 +34,13 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? `${theme === 'dark' ? 'bg-gray-900/90 backdrop-blur-md' : 'bg-white/90 backdrop-blur-md shadow-sm'}`
-          : 'bg-transparent'
+          : ''
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 font-bold text-xl">
-            <span className="text-blue-500">'Tis but a scratch</span>
+            <span className="">'Tis but a scratch</span>
           </div>
           
           <nav className="hidden md:flex space-x-8">
@@ -49,7 +49,7 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
                 key={item.name}
                 onClick={() => scrollToSection(item.ref)}
                 className={`px-1 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:text-blue-500 ${
-                  theme === 'dark' ? 'text-gray-200 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'
+                  theme === 'dark' ? 'hover:text-blue-400' : 'hover:text-blue-600'
                 }`}
               >
                 {item.name}
@@ -57,13 +57,13 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
             ))}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
               aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </nav>
-          
+
           <div className="flex md:hidden">
             <button
               onClick={toggleTheme}
@@ -74,7 +74,7 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
               aria-label="Open menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,7 +84,7 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
       </div>
       
       {mobileMenuOpen && (
-        <div className={`md:hidden ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} shadow-lg`}>
+        <div className={`md:hidden ${theme === 'dark' ? 'bg-gray-900' : ''} shadow-lg`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <button
@@ -95,8 +95,8 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
                 }}
                 className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
                   theme === 'dark' 
-                    ? 'text-gray-200 hover:bg-gray-800' 
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'hover:bg-gray-800' 
+                    : 'hover:bg-gray-100'
                 }`}
               >
                 {item.name}

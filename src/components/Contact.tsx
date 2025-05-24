@@ -46,7 +46,7 @@ const Contact = () => {
   ];
   
   return (
-    <section className={`py-20 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
@@ -65,7 +65,7 @@ const Contact = () => {
             <div className="space-y-6">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start">
-                  <div className={`p-3 rounded-full mr-4 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
+                  <div className="p-3 rounded-full mr-4">
                     {item.icon}
                   </div>
                   <div>

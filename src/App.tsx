@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
+    <div className="min-h-screen transition-colors duration-300 text-green-400 bg-black">
       <Header 
         scrollToSection={scrollToSection}
         aboutRef={aboutRef}
