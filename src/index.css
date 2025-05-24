@@ -20,13 +20,11 @@ button {
 
 
 .typing-animation {
-  border-right: 0.15em solid;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   white-space: nowrap;
   overflow: hidden;
 }
 
-@keyframes typing {
+@keyframes typing { 
   from { width: 0 }
   to { width: 100% }
 }

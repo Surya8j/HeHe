@@ -4,32 +4,21 @@ import { useTheme } from '../context/ThemeContext';
 const Skills = () => {
   const { theme } = useTheme();
   return (
-    <section className="py-20">
+    <section className="py-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Frameworks/Audits</h2>
-          <div className="h-1 w-20 bg-blue-500 mx-auto"></div>
-        </div>
+        <h2 className="text-2xl font-bold mb-6">Frameworks/Audits</h2>
 
         {/* You removed the skill progress sections */}
 
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 text-center">
-          {[
-            'SOC 2', 'ITGC', "NIST 800-37", 'ISO/IEC 27001:2022',
-            "ISO/IEC 27001:2013", 'ISO/IEC 27005:2022', "COSO",
-            "RBI ITGRCAP", "SEBI CSCRF",
-          ].map((cert, index) => (
-            <div 
-              key={index} 
-              className="p-4 rounded-lg transform transition hover:scale-105 shadow-sm"
-            >
+        <ul className="space-y-2">
+          {['SOC 2', 'ITGC', "NIST 800-37", 'ISO/IEC 27001:2022', "ISO/IEC 27001:2013", 'ISO/IEC 27005:2022', "COSO", "RBI ITGRCAP", "SEBI CSCRF", 'COBIT', 'DPDPA', 'CCPA'].map((cert, index) => (
+            <li key={index}>
               <span className="font-medium">{cert}</span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
-  );
-};
-
+  )
+}    
 export default Skills;

@@ -18,13 +18,11 @@ const About = () => {
   const imageContainerRef = useRef(null);
 
   return (
-    <section className={`py-20`}>
+    <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
-          <div className="h-1 w-20 bg-blue-500 mx-auto"></div>
-        </div>
         
+ <h2 className="text-3xl font-bold mb-4">About Me</h2>
+        <div className="mb-16"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h3 className="text-2xl font-semibold mb-6">
@@ -32,22 +30,22 @@ const About = () => {
             </h3>
             
             <p className="mb-6 leading-relaxed">
-              I'm a dedicated information security professional with 3+ years of experience specializing in 
-              risk management and security audits. My expertise focuses on implementing robust security frameworks 
-              and ensuring compliance with industry standards.
+              [+] Initializing Security Protocol... [OK]<br />
+              [+] Scanning for vulnerabilities... [Results: 3+ Years Experience]<br />
+              [+] Specializing in Risk Management & Security Audits. Frameworks implemented. Compliance achieved.
             </p>
             
             <p className="mb-6 leading-relaxed">
-              As a certified ISO 27001 Lead Auditor and CEH professional, I help organizations identify, 
-              assess, and mitigate security risks while ensuring compliance with regulatory requirements. 
-              My approach combines technical expertise with strategic planning to deliver comprehensive 
-              security solutions.
+              [+] Identity confirmed: ISO 27001 LA, CEH.<br />
+              [+] Executing risk assessment algorithms... [Identifying Threats]<br />
+              [+] Deploying mitigation strategies. Regulatory compliance verified.<br />
+              [+] Output: Comprehensive Security Solutions.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {personalInfo.map((item, index) => (
                 <div key={index} className="flex items-center">
-                  <div className={`p-2 rounded-full mr-3 ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                  <div className="p-2 mr-3">
  {item.icon}
                   </div>
                   <div>
@@ -57,24 +55,23 @@ const About = () => {
                 </div>
               ))}
             </div>
-            
-<a
-  href="CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
-  download
-  className={`px-6 py-3 mt-4 rounded-full font-medium transform transition hover:scale-105 ${
-    theme === 'dark' 
-      ? ' text-white' 
-      : ' text-white'
-  }`}
->
-  Download CV
-</a>
+
+            <a
+              href="CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
+              download
+              className={`px-6 py-3 mt-4 rounded-full font-medium transform transition hover:scale-105 ${
+                theme === 'dark'
+                  ? ' text-white'
+                  : ' text-white'
+              }`}
+            >
+              Download CV
+            </a>
           </div>
           
           <div className="order-1 lg:order-2">
             <div className="relative" ref={imageContainerRef}>
-              <div className={`rounded-lg overflow-hidden shadow-xl transform transition-all hover:scale-105 ${''
-              }`} style={{ aspectRatio: '1/1' }}>
+              <div className="rounded-lg overflow-hidden transform transition-all hover:scale-105" style={{ aspectRatio: '1/1' }}>
                 <img 
                   src="link.jpeg" //my photo
                   alt="Profile" 
@@ -82,7 +79,7 @@ const About = () => {
                 />
  </div>
               <div className={`absolute -bottom-5 -right-5 w-32 h-32 rounded-full border-4 ${
-                theme === 'dark' ? 'border-gray-800 bg-gray-700' : 'border-white bg-gray-100'
+                theme === 'dark' ? 'border-gray-800' : 'border-black'
               }`}>
                 <div className="relative w-full h-full flex items-center justify-center">
                   <span className="text-4xl font-bold text-blue-500">3+</span>

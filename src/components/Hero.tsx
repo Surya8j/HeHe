@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ChevronDown, Shield } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -8,59 +8,54 @@ interface HeroProps {
 
 const Hero = ({ scrollToAbout }: HeroProps) => {
   const { theme } = useTheme();
-  
+  const textRef1 = useRef<HTMLSpanElement>(null);
+  const textRef2 = useRef<HTMLSpanElement>(null);
+  const textRef3 = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-typing');
+            // Optionally add a cursor blink to the last line of text
+            if (entry.target === textRef3.current) {
+              entry.target.classList.add('animate-blink-caret');
+            }
+          }
+        });
+      },
+      { threshold: 0.5 } // Adjust threshold as needed
+    );
+
+    if (textRef1.current) observer.observe(textRef1.current);
+    if (textRef2.current) observer.observe(textRef2.current);
+    if (textRef3.current) observer.observe(textRef3.current);
+
+    return () => {
+      if (textRef1.current) observer.unobserve(textRef1.current);
+      if (textRef2.current) observer.unobserve(textRef2.current);
+      if (textRef3.current) observer.unobserve(textRef3.current);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <div className="flex justify-center mb-6">
-          <Shield size={64} className="text-green-400" />
-        </div>
-        
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-          <span className="block">Hello, I'm</span>
-          <span className="block mt-2">Surya J</span>
+      <div className="relative z-10 max-w-full mx-auto text-left">
+
+        {/* Removed buttons as they don't fit a pure terminal text interface */}
+        {/* You might replace these with text-based prompts or instructions */}
+
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-20 whitespace-nowrap overflow-hidden pr-1 animate-typing animate-blink-caret">
+          Intruder Detected !!!
         </h1>
-        
-        <div className="h-1 w-20 bg-blue-500 mx-auto mb-6"></div>
-        
-        <h2 className="text-xl sm:text-2xl md:text-3xl mb-8 leading-relaxed">
-          <span className="typing-animation">Information Security Professional</span>
-        </h2>
-        
-        <p className="text-lg mb-12 max-w-2xl mx-auto leading-relaxed opacity-90">
-          Protecting digital assets and securing infrastructure with advanced cybersecurity solutions and strategic security planning.
+        <p className="text-xl sm:text-2xl mb-20 whitespace-nowrap overflow-hidden pr-1 animate-typing animate-blink-caret" style={{ animationDelay: '2s', animationDuration: '2s' }}>
+          Oh false positive, you are just a visitor, welcome visitor
         </p>
-
-        <div className="flex flex-wrap gap-4 justify-center">
-          <button className="px-8 py-3 rounded-full font-medium transform transition hover:scale-105 bg-blue-600 hover:bg-blue-700 text-white">
-            View My Expertise
-          </button>
-
-          <button className="px-8 py-3 rounded-full font-medium transform transition hover:scale-105 bg-transparent hover:bg-gray-100 text-gray-900 border border-gray-300">
-            Contact Me
-          </button>
-          {/* Buttons still have some specific styles, you might want to adjust these to fit the terminal theme */}
-          {/* For example, change background/border colors and text colors to fit the green/black scheme */}
+        I am Surya J, an Information Security Risk Professional
+        <ChevronDown size={20} className="ml-1"/>
         </div>
-      </div>
-      
-      <div className="absolute bottom-10 animate-bounce">
-        <button 
-          onClick={scrollToAbout} 
-          className={`p-2 rounded-full ${
-            theme === 'dark' ? 'hover:text-white' : 'hover:text-gray-900'
-          }`}
-          aria-label="Scroll down"
-        >
-          <ChevronDown size={32} />
-        </button>
-      </div>
     </section>
   );
-};
-
+}
 export default Hero;

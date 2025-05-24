@@ -46,23 +46,16 @@ const Contact = () => {
   ];
   
   return (
-    <section className="py-20">
+    <section className="py-20 terminal-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-          <div className="h-1 w-20 bg-blue-500 mx-auto"></div>
-        </div>
+
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Contact Me</h3>
-            <p className={` ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-              Please, even without mistake don't contact the below mentioned,
-            </p>
-            <p className={`mb-8 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-              Contacts are give so that you won't call me mistakenly.
-            </p>
-            <div className="space-y-6">
+            <h3 className="text-2xl font-semibold mb-4">Contact Me</h3>
+            <p>Connection established.</p>
+            <p className="mb-8">Leave a message. I'll be in touch... maybe.</p>
+            <div className="space-y-6 terminal-info">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start">
                   <div className="p-3 rounded-full mr-4">
@@ -82,8 +75,6 @@ const Contact = () => {
                 </div>
               ))}
             </div>
-          </div>
-          <div>
           </div>
         </div>
       </div>
