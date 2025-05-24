@@ -34,6 +34,12 @@ button {
   50% { border-color: currentColor }
 }
 
+@keyframes blink-color {
+  0%, 4.9%, 10%, 14.9%, 20%, 24.9%, 30%, 34.9%, 40%, 44.9%, 50%, 54.9%, 60%, 64.9%, 70%, 74.9%, 80%, 84.9%, 90%, 94.9% { color: red; }
+  5%, 9.9%, 15%, 19.9%, 25%, 29.9%, 35%, 39.9%, 45%, 49.9%, 55%, 59.9%, 65%, 69.9%, 75%, 79.9%, 85%, 89.9%, 95%, 99.9% { color: green; }
+  100% { color: transparent; }
+}
+
 .skill-circle {
   transition: stroke-dasharray 0.8s ease;
 }

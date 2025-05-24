@@ -56,6 +56,16 @@ const About = () => {
               ))}
             </div>
 
+            {/* Work Experience Section */}
+            <div className="mb-6">
+              <h3 className="text-2xl font-semibold mb-4">Work Experience</h3>
+              <ul className="list-disc list-inside">
+                <li>Indecomm Business Services - SOC Analyst (Feb2022 - Sep2024)</li>
+                <li>Muthoot Capital Service Limited - Senior Officer - Risk (Sep2024 - Mar2025)</li>
+                <li>Zerodha Broking Limited - Information Security Analyst (Apr2025 - Present)</li>
+                {/* Add more companies as needed */}
+              </ul>
+            </div>
             <a
               href="CV-SuryaJ3.0.pdf" // Place your CV file in the public folder or update the path
               download

@@ -23,12 +23,6 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'About', ref: aboutRef },
-    { name: 'Skills', ref: skillsRef },
-    { name: 'Contact', ref: contactRef }
-  ];
-
   return (
     <header 
       className="fixed top-0 w-full z-50 bg-transparent"
@@ -40,34 +34,6 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
           </div>
           
           <nav className="hidden md:flex space-x-4">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.ref)}
-                className={`px-1 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:text-blue-500 ${
-                  theme === 'dark' ? 'hover:text-blue-400' : 'hover:text-blue-600'
-                }`}
-              > 
-                {item.name}
-              </button>
-            ))}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-          </nav>
-
-          <div className="flex md:hidden">
-            <button
-              onClick={toggleTheme}
-              className="p-2 mr-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
@@ -75,30 +41,12 @@ const Header = ({ scrollToSection, aboutRef, skillsRef, contactRef }: HeaderProp
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          </div>
+          </nav>
         </div>
       </div>
       
       {mobileMenuOpen && (
         <div className="md:hidden bg-black">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => {
-                  scrollToSection(item.ref);
-                  setMobileMenuOpen(false);
-                }}
-                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
-                  theme === 'dark' 
-                    ? 'hover:bg-gray-800' 
-                    : 'hover:bg-gray-100'
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
         </div>
       )}
     </header>

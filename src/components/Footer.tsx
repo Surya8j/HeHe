@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
             <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>
-              © {currentYear} Surya J. All Rights Reserved
+              © {currentYear} Surya J - All Rights Reserved
             </p>
           </div>
           

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="min-h-screen transition-colors duration-300 text-green-400 bg-black">
-      <Header 
+      <Header
         scrollToSection={scrollToSection}
         aboutRef={aboutRef}
         skillsRef={skillsRef}
@@ -27,17 +27,16 @@ function App() {
       />
       <main>
         <Hero scrollToAbout={() => scrollToSection(aboutRef)} />
-        <div ref={aboutRef}>
-          <About />
-        </div>
-        <div ref={skillsRef}>
-          <Skills />
-        </div>
-        <div ref={contactRef}>
-          <Contact />
-        </div>
-      </main>
-      <Footer />
+
+
+            <div ref={aboutRef}>
+              <About />
+            </div>
+            <div ref={skillsRef}>
+              <Skills />
+            </div>
+          </main>
+          <Footer />
     </div>
   );
 }
